@@ -79,8 +79,11 @@ WSGI_APPLICATION = 'btrs.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'btredb',
+        'USER': 'joseph',
+        'PASSWORD': 'BitcoinExpress838',
+        'HOST': 'localhost'
     }
 }
 
