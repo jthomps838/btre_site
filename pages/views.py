@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from listings.choices import price_choices, bedroom_choices, state_choices
 # Create your views here.
 from listings.models import Listing
 from realtors.models import Realtor
@@ -9,7 +10,10 @@ def index(request):
         '-list_date').filter(is_published=True)[:3]
 
     context = {
-        'listings': listings
+        'listings': listings,
+        'state_choices': state_choices,
+        'price_choices': price_choices,
+        'bedroom_choices': bedroom_choices,
     }
     return render(request, 'pages/index.html', context)
 
